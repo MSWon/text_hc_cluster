@@ -1,11 +1,11 @@
 import os
 from setuptools import setup, find_packages
 from hmin import __version__, __author__, __description__
-#from hmin.cli import main
 
 def get_requires():
     result = []
-    with open("./requirements.txt", "r") as f:
+    reqfile = 'requirements.txt'
+    with open(os.path.join(os.path.dirname(__file__), reqfile)) as f:
         for package_name in f:
             result.append(package_name)
     return result
